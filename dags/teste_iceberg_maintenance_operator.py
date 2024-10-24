@@ -17,6 +17,6 @@ default_args = {
 with DAG(dag_id="test_maintenance_operator", default_args=default_args, start_date=datetime(2022, 3, 4), schedule_interval=None) as dag:
     hello_task = TrinoIcebergMaintenanceOperator(
         task_id="sample-task",
-        table_name="iceberg.ness_psp_receivable_compliance.contract_receivable_unit_reached_flat",
+        table_name="my_iceberg_table",
         conn_id="trino_admin"
     )
